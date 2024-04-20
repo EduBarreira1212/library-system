@@ -13,6 +13,11 @@ const Div = styled.div`
     height: 100vh;
 `;
 
+const FormFormik = styled(Form)`
+    ${Style}
+    gap: 1vh;
+`;
+
 const Register = () => {
     return (
         <Div>
@@ -25,7 +30,7 @@ const Register = () => {
                 }}
                 onSubmit={(values) => console.log(values)}
             >
-                <Form>
+                <FormFormik>
                     <label htmlFor="">Name:</label>
                     <Field type="text" name="name" placeholder="Ex: Brian"/>
                     <ErrorMessage name="name" component="div"/>
@@ -53,7 +58,7 @@ const Register = () => {
                     <label htmlFor="title">Loan date:</label>
                     <Field type="datetime-local" name="loan" placeholder="Ex: 01/01/2024"/>
                     <ErrorMessage name="loan" component="div"/>
-                </Form>
+                </FormFormik>
             </Formik>
         </Div>
     );
