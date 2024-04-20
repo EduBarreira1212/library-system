@@ -61,7 +61,7 @@ const Register = () => {
                     <Field type="text" name="name" placeholder="Ex: Brian"/>
                     <ErrorMessage name="name" component="div"/>
                     <label htmlFor="">CPF:</label>
-                    <Field type="number" name="cpf" placeholder="Ex: 111.222.333-44"/>
+                    <Field type="text" name="cpf" placeholder="Ex: 111.222.333-44"/>
                     <ErrorMessage name="cpf" component="div"/>
                     <label htmlFor="">E-mail:</label>
                     <Field type="email" name="email" placeholder="Ex: Brian@gmail.com"/>
@@ -76,7 +76,7 @@ const Register = () => {
                     <Field type="text" name="author" placeholder="Ex: JK"/>
                     <ErrorMessage name="author" component="div"/>
                     <label htmlFor="title">Publisher:</label>
-                    <Field type="text" name="publsiher" placeholder="Ex: books company"/>
+                    <Field type="text" name="publisher" placeholder="Ex: books company"/>
                     <ErrorMessage name="publisher" component="div"/>
                     <label htmlFor="title">Publication Year:</label>
                     <Field type="number" name="publicationYear" placeholder="Ex: 1500"/>
