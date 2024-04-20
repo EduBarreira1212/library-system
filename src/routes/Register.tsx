@@ -1,4 +1,5 @@
-import { Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+
 
 const Register = () => {
     return (
@@ -13,7 +14,33 @@ const Register = () => {
                 onSubmit={(values) => console.log(values)}
             >
                 <Form>
-                    
+                    <label htmlFor="">Name:</label>
+                    <Field type="text" name="name" placeholder="Ex: Brian"/>
+                    <ErrorMessage name="name" component="div"/>
+                    <label htmlFor="">CPF:</label>
+                    <Field type="number" name="cpf" placeholder="Ex: 111.222.333-44"/>
+                    <ErrorMessage name="cpf" component="div"/>
+                    <label htmlFor="">E-mail:</label>
+                    <Field type="email" name="email" placeholder="Ex: Brian@gmail.com"/>
+                    <ErrorMessage name="email" component="div"/>
+                    <label htmlFor="">Phone:</label>
+                    <Field type="tel" name="phone" placeholder="Ex: (00)99988-7766"/>
+                    <ErrorMessage name="phone" component="div"/>
+                    <label htmlFor="title">Title:</label>
+                    <Field type="text" name="title" placeholder="Ex: Harry Potter"/>
+                    <ErrorMessage name="title" component="div"/>
+                    <label htmlFor="title">Author:</label>
+                    <Field type="text" name="author" placeholder="Ex: JK"/>
+                    <ErrorMessage name="author" component="div"/>
+                    <label htmlFor="title">Publishing company:</label>
+                    <Field type="text" name="publishingCompany" placeholder="Ex: books company"/>
+                    <ErrorMessage name="publishingCompany" component="div"/>
+                    <label htmlFor="title">Publication Year:</label>
+                    <Field type="number" name="publicationYear" placeholder="Ex: 1500"/>
+                    <ErrorMessage name="publicationYear" component="div"/>
+                    <label htmlFor="title">Loan date:</label>
+                    <Field type="datetime-local" name="loan" placeholder="Ex: 01/01/2024"/>
+                    <ErrorMessage name="loan" component="div"/>
                 </Form>
             </Formik>
         </div>
