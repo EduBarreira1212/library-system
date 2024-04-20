@@ -19,11 +19,23 @@ const FormFormik = styled(Form)`
     gap: 1vh;
 `;
 
+interface IformData {
+    name: string;
+    cpf: string;
+    email: string;
+    phone: string;
+    title: string;
+    author: string;
+    publisher: string;
+    publicationYear: number;
+    loan: Date;
+}
+
 const LoanSchema = Yup.object().shape({
     name: Yup.string().required('Name is required'),
     cpf: Yup.string().matches(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, 'Invalid CPF').required('CPF is required'),
     email: Yup.string().email('Invalid email').required('Email is required'),
-    phone: Yup.number().required('Phone number is required'),
+    phone: Yup.string().required('Phone number is required'),
     title: Yup.string().required('Title is required'),
     author: Yup.string().required('Author is required'),
     publisher: Yup.string().required('Publisher is required'),
@@ -38,9 +50,10 @@ const Register = () => {
             <Formik
                 initialValues={{
                     name: "", cpf: "", email: "", phone: "",
-                    title: "", author: "", publisher: "", publicationYear: "",
-                    loan: ""
+                    title: "", author: "", publisher: "", publicationYear: 0,
+                    loan: new Date()
                 }}
+                validationSchema={LoanSchema}
                 onSubmit={(values) => console.log(values)}
             >
                 <FormFormik>
