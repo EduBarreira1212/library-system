@@ -58,6 +58,7 @@ const Register = () => {
                     <label htmlFor="title">Loan date:</label>
                     <Field type="datetime-local" name="loan" placeholder="Ex: 01/01/2024"/>
                     <ErrorMessage name="loan" component="div"/>
+                    <input type="submit" value="loan the book"/>
                 </FormFormik>
             </Formik>
         </Div>
