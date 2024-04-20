@@ -1,9 +1,21 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { css, styled } from "styled-components";
 
+const Style = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Div = styled.div`
+    ${Style}
+    height: 100vh;
+`;
 
 const Register = () => {
     return (
-        <div>
+        <Div>
             <h1>Register</h1>
             <Formik
                 initialValues={{
@@ -43,7 +55,7 @@ const Register = () => {
                     <ErrorMessage name="loan" component="div"/>
                 </Form>
             </Formik>
-        </div>
+        </Div>
     );
 }
 
