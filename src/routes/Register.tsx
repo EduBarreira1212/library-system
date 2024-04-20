@@ -1,3 +1,4 @@
+import axios from "axios";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { css, styled } from "styled-components";
 import * as Yup from 'yup';
@@ -44,6 +45,19 @@ const LoanSchema = Yup.object().shape({
 })
 
 const Register = () => {
+
+    const handleSubmit = async (data: IformData) => {
+        try {
+            const response = await axios.post(
+                "https://apigenerator.dronahq.com/api/PxY0zUv0/libraryData",
+                data
+            );
+            console.log("API Response:", response.data);
+        } catch (error) {
+            console.log("Error:", Error);
+        }
+    }
+
     return (
         <Div>
             <h1>Register</h1>
@@ -54,7 +68,7 @@ const Register = () => {
                     loan: new Date()
                 }}
                 validationSchema={LoanSchema}
-                onSubmit={(values) => console.log(values)}
+                onSubmit={(values) => handleSubmit(values)}
             >
                 <FormFormik>
                     <label htmlFor="">Name:</label>
