@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { css, styled } from "styled-components";
+import * as Yup from 'yup';
 
 const Style = css`
   display: flex;
@@ -18,6 +19,18 @@ const FormFormik = styled(Form)`
     gap: 1vh;
 `;
 
+const LoanSchema = Yup.object().shape({
+    name: Yup.string().required('Name is required'),
+    cpf: Yup.string().matches(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, 'Invalid CPF').required('CPF is required'),
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    phone: Yup.number().required('Phone number is required'),
+    title: Yup.string().required('Title is required'),
+    author: Yup.string().required('Author is required'),
+    publisher: Yup.string().required('Publisher is required'),
+    publicationYear: Yup.number().integer('Publication year must be an integer').positive('Publication year must be a positive number').required('Publication year is required'),
+    loan: Yup.date().required('Date and time of loan are required'),
+})
+
 const Register = () => {
     return (
         <Div>
@@ -25,7 +38,7 @@ const Register = () => {
             <Formik
                 initialValues={{
                     name: "", cpf: "", email: "", phone: "",
-                    title: "", author: "", publishingCompany: "", publicationYear: "",
+                    title: "", author: "", publisher: "", publicationYear: "",
                     loan: ""
                 }}
                 onSubmit={(values) => console.log(values)}
@@ -49,9 +62,9 @@ const Register = () => {
                     <label htmlFor="title">Author:</label>
                     <Field type="text" name="author" placeholder="Ex: JK"/>
                     <ErrorMessage name="author" component="div"/>
-                    <label htmlFor="title">Publishing company:</label>
-                    <Field type="text" name="publishingCompany" placeholder="Ex: books company"/>
-                    <ErrorMessage name="publishingCompany" component="div"/>
+                    <label htmlFor="title">Publisher:</label>
+                    <Field type="text" name="publsiher" placeholder="Ex: books company"/>
+                    <ErrorMessage name="publisher" component="div"/>
                     <label htmlFor="title">Publication Year:</label>
                     <Field type="number" name="publicationYear" placeholder="Ex: 1500"/>
                     <ErrorMessage name="publicationYear" component="div"/>
