@@ -40,6 +40,23 @@ const FieldFormik = styled(Field)`
     border-radius: 0.5vw;
 `;
 
+const SubmitBtn = styled.input`
+    width: 100%;
+    padding: 1vw;
+    margin-bottom: 3vh;
+    background-color: #007bff;
+    color: #fff;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: #0056b3;
+    }
+`;
+
 export interface IformData {
     name: string;
     cpf: string;
@@ -118,7 +135,7 @@ const Register = () => {
                     <Label htmlFor="title">Loan date:</Label>
                     <FieldFormik type="datetime-local" name="loan" placeholder="Ex: 01/01/2024"/>
                     <ErrorMessage name="loan" component="div"/>
-                    <input type="submit" value="loan the book"/>
+                    <SubmitBtn type="submit" value="loan the book"/>
                 </FormFormik>
             </Formik>
         </Div>
