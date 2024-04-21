@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 import { css, styled } from "styled-components";
 import * as Yup from 'yup';
 
@@ -88,6 +89,8 @@ const LoanSchema = Yup.object().shape({
 
 const Register = () => {
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (data: IformData) => {
         try {
             const response = await axios.post(
@@ -95,6 +98,7 @@ const Register = () => {
                 data
             );
             console.log("API Response:", response.data);
+            navigate("/");
         } catch (error) {
             console.log("Error:", Error);
         }
