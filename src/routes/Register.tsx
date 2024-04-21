@@ -22,6 +22,11 @@ const H1 = styled.h1`
     margin-bottom: 3vh;
 `;
 
+const Label = styled.label`
+    margin-bottom: 0.5vh;
+    font-weight: bold;
+`;
+
 const FormFormik = styled(Form)`
     ${Style}
     gap: 1vh;
@@ -78,31 +83,31 @@ const Register = () => {
                 onSubmit={(values) => handleSubmit(values)}
             >
                 <FormFormik>
-                    <label htmlFor="">Name:</label>
+                    <Label htmlFor="">Name:</Label>
                     <Field type="text" name="name" placeholder="Ex: Brian"/>
                     <ErrorMessage name="name" component="div"/>
-                    <label htmlFor="">CPF:</label>
+                    <Label htmlFor="">CPF:</Label>
                     <Field type="text" name="cpf" placeholder="Ex: 111.222.333-44"/>
                     <ErrorMessage name="cpf" component="div"/>
-                    <label htmlFor="">E-mail:</label>
+                    <Label htmlFor="">E-mail:</Label>
                     <Field type="email" name="email" placeholder="Ex: Brian@gmail.com"/>
                     <ErrorMessage name="email" component="div"/>
-                    <label htmlFor="">Phone:</label>
+                    <Label htmlFor="">Phone:</Label>
                     <Field type="tel" name="phone" placeholder="Ex: (00)99988-7766"/>
                     <ErrorMessage name="phone" component="div"/>
-                    <label htmlFor="title">Title:</label>
+                    <Label htmlFor="title">Title:</Label>
                     <Field type="text" name="title" placeholder="Ex: Harry Potter"/>
                     <ErrorMessage name="title" component="div"/>
-                    <label htmlFor="title">Author:</label>
+                    <Label htmlFor="title">Author:</Label>
                     <Field type="text" name="author" placeholder="Ex: JK"/>
                     <ErrorMessage name="author" component="div"/>
-                    <label htmlFor="title">Publisher:</label>
+                    <Label htmlFor="title">Publisher:</Label>
                     <Field type="text" name="publisher" placeholder="Ex: books company"/>
                     <ErrorMessage name="publisher" component="div"/>
-                    <label htmlFor="title">Publication Year:</label>
+                    <Label htmlFor="title">Publication Year:</Label>
                     <Field type="number" name="publicationYear" placeholder="Ex: 1500"/>
                     <ErrorMessage name="publicationYear" component="div"/>
-                    <label htmlFor="title">Loan date:</label>
+                    <Label htmlFor="title">Loan date:</Label>
                     <Field type="datetime-local" name="loan" placeholder="Ex: 01/01/2024"/>
                     <ErrorMessage name="loan" component="div"/>
                     <input type="submit" value="loan the book"/>
