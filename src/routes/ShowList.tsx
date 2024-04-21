@@ -18,6 +18,10 @@ const ShowList = () => {
         fetchData();
     },[]);
 
+    if(isLoading){
+        return <div>Loading...</div>
+    }
+
     return (
         <div>
             <h1>Show list</h1>
