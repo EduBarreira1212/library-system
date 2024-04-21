@@ -13,6 +13,13 @@ const Style = css`
 const Div = styled.div`
     ${Style}
     height: 100vh;
+    max-width: 60vw;
+    margin: 0 auto;
+`;
+
+const H1 = styled.h1`
+    font-size: 2rem;
+    margin-bottom: 3vh;
 `;
 
 const FormFormik = styled(Form)`
@@ -60,7 +67,7 @@ const Register = () => {
 
     return (
         <Div>
-            <h1>Register</h1>
+            <H1>Register</H1>
             <Formik
                 initialValues={{
                     name: "", cpf: "", email: "", phone: "",
