@@ -20,7 +20,7 @@ const FormFormik = styled(Form)`
     gap: 1vh;
 `;
 
-interface IformData {
+export interface IformData {
     name: string;
     cpf: string;
     email: string;
