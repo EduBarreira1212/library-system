@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { IformData } from "./Register";
 
 const ShowList = () => {
-    const [list, setList] = useState();
+    const [list, setList] = useState<IformData[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
