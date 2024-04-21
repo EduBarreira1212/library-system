@@ -57,6 +57,11 @@ const SubmitBtn = styled.input`
     }
 `;
 
+const ErrorMessageFormik = styled(ErrorMessage)`
+    color: red;
+    margin-top: 5px;
+`;
+
 export interface IformData {
     name: string;
     cpf: string;
@@ -110,31 +115,31 @@ const Register = () => {
                 <FormFormik>
                     <Label htmlFor="">Name:</Label>
                     <FieldFormik type="text" name="name" placeholder="Ex: Brian"/>
-                    <ErrorMessage name="name" component="div"/>
+                    <ErrorMessageFormik name="name" component="div"/>
                     <Label htmlFor="">CPF:</Label>
                     <FieldFormik type="text" name="cpf" placeholder="Ex: 111.222.333-44"/>
-                    <ErrorMessage name="cpf" component="div"/>
+                    <ErrorMessageFormik name="cpf" component="div"/>
                     <Label htmlFor="">E-mail:</Label>
                     <FieldFormik type="email" name="email" placeholder="Ex: Brian@gmail.com"/>
-                    <ErrorMessage name="email" component="div"/>
+                    <ErrorMessageFormik name="email" component="div"/>
                     <Label htmlFor="">Phone:</Label>
                     <FieldFormik type="tel" name="phone" placeholder="Ex: (00)99988-7766"/>
-                    <ErrorMessage name="phone" component="div"/>
+                    <ErrorMessageFormik name="phone" component="div"/>
                     <Label htmlFor="title">Title:</Label>
                     <FieldFormik type="text" name="title" placeholder="Ex: Harry Potter"/>
-                    <ErrorMessage name="title" component="div"/>
+                    <ErrorMessageFormik name="title" component="div"/>
                     <Label htmlFor="title">Author:</Label>
                     <FieldFormik type="text" name="author" placeholder="Ex: JK"/>
-                    <ErrorMessage name="author" component="div"/>
+                    <ErrorMessageFormik name="author" component="div"/>
                     <Label htmlFor="title">Publisher:</Label>
                     <FieldFormik type="text" name="publisher" placeholder="Ex: books company"/>
-                    <ErrorMessage name="publisher" component="div"/>
+                    <ErrorMessageFormik name="publisher" component="div"/>
                     <Label htmlFor="title">Publication Year:</Label>
                     <FieldFormik type="number" name="publicationYear" placeholder="Ex: 1500"/>
-                    <ErrorMessage name="publicationYear" component="div"/>
+                    <ErrorMessageFormik name="publicationYear" component="div"/>
                     <Label htmlFor="title">Loan date:</Label>
                     <FieldFormik type="datetime-local" name="loan" placeholder="Ex: 01/01/2024"/>
-                    <ErrorMessage name="loan" component="div"/>
+                    <ErrorMessageFormik name="loan" component="div"/>
                     <SubmitBtn type="submit" value="loan the book"/>
                 </FormFormik>
             </Formik>
