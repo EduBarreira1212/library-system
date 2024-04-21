@@ -12,7 +12,7 @@ const Style = css`
 
 const Div = styled.div`
     ${Style}
-    height: 100vh;
+    min-height: 100vh;
     max-width: 60vw;
     margin: 0 auto;
 `;
@@ -30,6 +30,14 @@ const Label = styled.label`
 const FormFormik = styled(Form)`
     ${Style}
     gap: 1vh;
+`;
+
+const FieldFormik = styled(Field)`
+    width: calc(100% - 1vw);
+    padding: 0.8vw;
+    margin-bottom: 1vh;
+    border: 0.1vw solid #ccc;
+    border-radius: 0.5vw;
 `;
 
 export interface IformData {
@@ -84,31 +92,31 @@ const Register = () => {
             >
                 <FormFormik>
                     <Label htmlFor="">Name:</Label>
-                    <Field type="text" name="name" placeholder="Ex: Brian"/>
+                    <FieldFormik type="text" name="name" placeholder="Ex: Brian"/>
                     <ErrorMessage name="name" component="div"/>
                     <Label htmlFor="">CPF:</Label>
-                    <Field type="text" name="cpf" placeholder="Ex: 111.222.333-44"/>
+                    <FieldFormik type="text" name="cpf" placeholder="Ex: 111.222.333-44"/>
                     <ErrorMessage name="cpf" component="div"/>
                     <Label htmlFor="">E-mail:</Label>
-                    <Field type="email" name="email" placeholder="Ex: Brian@gmail.com"/>
+                    <FieldFormik type="email" name="email" placeholder="Ex: Brian@gmail.com"/>
                     <ErrorMessage name="email" component="div"/>
                     <Label htmlFor="">Phone:</Label>
-                    <Field type="tel" name="phone" placeholder="Ex: (00)99988-7766"/>
+                    <FieldFormik type="tel" name="phone" placeholder="Ex: (00)99988-7766"/>
                     <ErrorMessage name="phone" component="div"/>
                     <Label htmlFor="title">Title:</Label>
-                    <Field type="text" name="title" placeholder="Ex: Harry Potter"/>
+                    <FieldFormik type="text" name="title" placeholder="Ex: Harry Potter"/>
                     <ErrorMessage name="title" component="div"/>
                     <Label htmlFor="title">Author:</Label>
-                    <Field type="text" name="author" placeholder="Ex: JK"/>
+                    <FieldFormik type="text" name="author" placeholder="Ex: JK"/>
                     <ErrorMessage name="author" component="div"/>
                     <Label htmlFor="title">Publisher:</Label>
-                    <Field type="text" name="publisher" placeholder="Ex: books company"/>
+                    <FieldFormik type="text" name="publisher" placeholder="Ex: books company"/>
                     <ErrorMessage name="publisher" component="div"/>
                     <Label htmlFor="title">Publication Year:</Label>
-                    <Field type="number" name="publicationYear" placeholder="Ex: 1500"/>
+                    <FieldFormik type="number" name="publicationYear" placeholder="Ex: 1500"/>
                     <ErrorMessage name="publicationYear" component="div"/>
                     <Label htmlFor="title">Loan date:</Label>
-                    <Field type="datetime-local" name="loan" placeholder="Ex: 01/01/2024"/>
+                    <FieldFormik type="datetime-local" name="loan" placeholder="Ex: 01/01/2024"/>
                     <ErrorMessage name="loan" component="div"/>
                     <input type="submit" value="loan the book"/>
                 </FormFormik>
