@@ -21,3 +21,5 @@ const Loan: React.FC<IloanProps> = ({children}) => {
         </div>
     );
 }
+
+export default Loan;
