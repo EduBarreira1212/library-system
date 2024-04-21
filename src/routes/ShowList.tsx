@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { IformData } from "./Register";
 import Loan from "../components/Loan";
 import styled, { css } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Style = css`
   display: flex;
@@ -19,6 +20,8 @@ const Div = styled.div`
 const ShowList = () => {
     const [list, setList] = useState<IformData[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -45,6 +48,7 @@ const ShowList = () => {
                     <li key={index}><Loan>{loan}</Loan></li>
                 ))}
             </ul>
+            <button onClick={() => navigate("/register")}>Register a loan</button>
         </Div>
     );
 }
