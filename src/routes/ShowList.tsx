@@ -46,6 +46,12 @@ const ShowList = () => {
             <div>
                 <label htmlFor="text-filter">Filter:</label>
                 <input type="text" name="filter" id="text-filter" />
+                <label htmlFor="select-filter">Filter by:</label>
+                <select name="filter-select" id="filter-select">
+                    <option value="cpf">CPF</option>
+                    <option value="date">Date</option>
+                    <option value="year">Publication year</option>
+                </select>
             </div>
             <ul>
                 {list.map((loan, index) => (
