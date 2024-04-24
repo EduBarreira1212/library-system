@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IformData } from "./Register";
 import Loan from "../components/Loan";
 import styled, { css } from "styled-components";
@@ -22,6 +22,8 @@ const ShowList = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const navigate = useNavigate();
+
+    const myRef = useRef();
 
     useEffect(() => {
         const fetchData = async () => {
