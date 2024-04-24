@@ -43,6 +43,10 @@ const ShowList = () => {
     return (
         <Div>
             <h1>Show list</h1>
+            <div>
+                <label htmlFor="text-filter">Filter:</label>
+                <input type="text" name="filter" id="text-filter" />
+            </div>
             <ul>
                 {list.map((loan, index) => (
                     <li key={index}><Loan>{loan}</Loan></li>
