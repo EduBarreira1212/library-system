@@ -136,7 +136,7 @@ const ShowList = () => {
             </Div2>
             <Ul>
                 {list
-                .filter(loan => loan.cpf.includes(inputFilterValue) || loan.publicationYear === Number(inputFilterValue)|| loan.loan.toString() >= inputFilterValue)
+                .filter(loan => loan.cpf.includes(inputFilterValue) || loan.publicationYear.toString().includes(inputFilterValue) || loan.loan.toString() === inputFilterValue)
                 .map((loan, index) => (
                     <Li key={index}><Loan>{loan}</Loan></Li>
                 ))}
