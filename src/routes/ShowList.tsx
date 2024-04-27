@@ -26,6 +26,26 @@ const Label = styled.label`
     font-weight: bold;
 `;
 
+const Div2 = styled.div`
+    text-align: center;
+`;
+
+const StyleInputAndSelect = css`
+    width: calc(25% - 0.1vw);
+    padding: 0.8vh 0.8vw;
+    margin-bottom: 1vh;
+    border: 0.1vw solid #ccc;
+    border-radius: 0.5vw;
+`;
+
+const Input = styled.input`
+    ${StyleInputAndSelect};
+`;
+
+const Select = styled.select`
+    ${StyleInputAndSelect};
+`;
+
 const ShowList = () => {
     const [list, setList] = useState<IformData[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -65,16 +85,16 @@ const ShowList = () => {
 
     return (
         <Div>
-            <div>
+            <Div2>
                 <Label htmlFor="text-filter">Filter:</Label>
-                <input type={selectedValue} name="filter" id="text-filter" onChange={handleInputChange}/>
+                <Input type={selectedValue} name="filter" id="text-filter" onChange={handleInputChange}/>
                 <Label htmlFor="select-filter">Filter by:</Label>
-                <select ref={selectRef} name="filter-select" id="filter-select" onChange={handleSelectChange}>
+                <Select ref={selectRef} name="filter-select" id="filter-select" onChange={handleSelectChange}>
                     <option value="text">CPF</option>
                     <option value="datetime-local">Date</option>
                     <option value="number">Publication year</option>
-                </select>
-            </div>
+                </Select>
+            </Div2>
             <ul>
                 {list
                 .filter(loan => loan.cpf.includes(inputFilterValue) || loan.publicationYear === Number(inputFilterValue)|| loan.loan.toString() >= inputFilterValue)
