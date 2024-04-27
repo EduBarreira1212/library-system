@@ -50,9 +50,9 @@ const ShowList = () => {
                 <input type="text" name="filter" id="text-filter" />
                 <label htmlFor="select-filter">Filter by:</label>
                 <select ref={selectRef} name="filter-select" id="filter-select">
-                    <option value="cpf">CPF</option>
-                    <option value="date">Date</option>
-                    <option value="year">Publication year</option>
+                    <option value="text">CPF</option>
+                    <option value="datetime-local">Date</option>
+                    <option value="number">Publication year</option>
                 </select>
             </div>
             <ul>
