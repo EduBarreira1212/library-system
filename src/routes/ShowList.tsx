@@ -20,6 +20,7 @@ const Div = styled.div`
 const ShowList = () => {
     const [list, setList] = useState<IformData[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [selectedValue, setSelectedValue] = useState<string>("");
 
     const navigate = useNavigate();
 
@@ -47,7 +48,7 @@ const ShowList = () => {
             <h1>Show list</h1>
             <div>
                 <label htmlFor="text-filter">Filter:</label>
-                <input type="text" name="filter" id="text-filter" />
+                <input type={selectedValue} name="filter" id="text-filter" />
                 <label htmlFor="select-filter">Filter by:</label>
                 <select ref={selectRef} name="filter-select" id="filter-select">
                     <option value="text">CPF</option>
