@@ -15,6 +15,9 @@ const Style = css`
 const Div = styled.div`
     ${Style}
     min-height: 100vh;
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 2vh 2vw;
 `;
 
 const ShowList = () => {
@@ -56,7 +59,6 @@ const ShowList = () => {
 
     return (
         <Div>
-            <h1>Show list</h1>
             <div>
                 <label htmlFor="text-filter">Filter:</label>
                 <input type={selectedValue} name="filter" id="text-filter" onChange={handleInputChange}/>
