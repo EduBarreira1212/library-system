@@ -55,6 +55,22 @@ const Li = styled.li`
     margin-bottom: 5vh;
 `;
 
+const Button = styled.button`
+    padding: 1vw;
+    margin-bottom: 2vh;
+    background-color: #007bff;
+    color: #fff;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover{
+        background-color: #0056b3;
+    }
+`;
+
 const ShowList = () => {
     const [list, setList] = useState<IformData[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -111,7 +127,7 @@ const ShowList = () => {
                     <Li key={index}><Loan>{loan}</Loan></Li>
                 ))}
             </Ul>
-            <button onClick={() => navigate("/register")}>Register a loan</button>
+            <Button onClick={() => navigate("/register")}>Register a loan</Button>
         </Div>
     );
 }
