@@ -21,7 +21,7 @@ const ShowList = () => {
     const [list, setList] = useState<IformData[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [selectedValue, setSelectedValue] = useState<string>("");
-    const [inputFilterValue, setInputFilterValue] = useState<string>();
+    const [inputFilterValue, setInputFilterValue] = useState<string>("");
 
     const navigate = useNavigate();
 
@@ -68,7 +68,9 @@ const ShowList = () => {
                 </select>
             </div>
             <ul>
-                {list.map((loan, index) => (
+                {list
+                .filter(loan => loan.cpf.includes(inputFilterValue) || loan.publicationYear === Number(inputFilterValue)|| loan.loan.toString() === inputFilterValue)
+                .map((loan, index) => (
                     <li key={index}><Loan>{loan}</Loan></li>
                 ))}
             </ul>
