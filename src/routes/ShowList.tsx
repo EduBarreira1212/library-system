@@ -20,6 +20,12 @@ const Div = styled.div`
     padding: 2vh 2vw;
 `;
 
+const Label = styled.label`
+    margin-left: 1vw;
+    margin-bottom: 0.5vh;
+    font-weight: bold;
+`;
+
 const ShowList = () => {
     const [list, setList] = useState<IformData[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -60,9 +66,9 @@ const ShowList = () => {
     return (
         <Div>
             <div>
-                <label htmlFor="text-filter">Filter:</label>
+                <Label htmlFor="text-filter">Filter:</Label>
                 <input type={selectedValue} name="filter" id="text-filter" onChange={handleInputChange}/>
-                <label htmlFor="select-filter">Filter by:</label>
+                <Label htmlFor="select-filter">Filter by:</Label>
                 <select ref={selectRef} name="filter-select" id="filter-select" onChange={handleSelectChange}>
                     <option value="text">CPF</option>
                     <option value="datetime-local">Date</option>
