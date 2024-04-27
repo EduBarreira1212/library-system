@@ -21,6 +21,7 @@ const ShowList = () => {
     const [list, setList] = useState<IformData[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [selectedValue, setSelectedValue] = useState<string>("");
+    const [inputFilterValue, setInputFilterValue] = useState<string>();
 
     const navigate = useNavigate();
 
@@ -49,12 +50,16 @@ const ShowList = () => {
         }
     }
 
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputFilterValue(event.target.value)
+    }
+
     return (
         <Div>
             <h1>Show list</h1>
             <div>
                 <label htmlFor="text-filter">Filter:</label>
-                <input type={selectedValue} name="filter" id="text-filter" />
+                <input type={selectedValue} name="filter" id="text-filter" onChange={handleInputChange}/>
                 <label htmlFor="select-filter">Filter by:</label>
                 <select ref={selectRef} name="filter-select" id="filter-select" onChange={handleSelectChange}>
                     <option value="text">CPF</option>
