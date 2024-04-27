@@ -12,6 +12,16 @@ const Style = css`
   justify-content: center;
 `;
 
+const LoadingDiv = styled.div`
+    ${Style};
+    height: 100vh;
+`;
+
+const Span = styled.span`
+    font-size: 1.5rem;
+    color: #333;
+`;
+
 const Div = styled.div`
     ${Style}
     min-height: 100vh;
@@ -95,7 +105,11 @@ const ShowList = () => {
     },[]);
 
     if(isLoading){
-        return <div>Loading...</div>
+        return (
+        <LoadingDiv>
+            <Span>Loading...</Span>
+        </LoadingDiv>
+        );
     }
 
     const handleSelectChange = () => {
