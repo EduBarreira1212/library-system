@@ -21,7 +21,7 @@ const Div = styled.div`
 `;
 
 const Label = styled.label`
-    margin-left: 1vw;
+    margin-left: 0.5vw;
     margin-bottom: 0.5vh;
     font-weight: bold;
 `;
@@ -44,6 +44,15 @@ const Input = styled.input`
 
 const Select = styled.select`
     ${StyleInputAndSelect};
+`;
+
+const Ul = styled.ul`
+    list-style-type: none;
+    padding: 0;
+`;
+
+const Li = styled.li`
+    margin-bottom: 5vh;
 `;
 
 const ShowList = () => {
@@ -95,13 +104,13 @@ const ShowList = () => {
                     <option value="number">Publication year</option>
                 </Select>
             </Div2>
-            <ul>
+            <Ul>
                 {list
                 .filter(loan => loan.cpf.includes(inputFilterValue) || loan.publicationYear === Number(inputFilterValue)|| loan.loan.toString() >= inputFilterValue)
                 .map((loan, index) => (
-                    <li key={index}><Loan>{loan}</Loan></li>
+                    <Li key={index}><Loan>{loan}</Loan></Li>
                 ))}
-            </ul>
+            </Ul>
             <button onClick={() => navigate("/register")}>Register a loan</button>
         </Div>
     );
