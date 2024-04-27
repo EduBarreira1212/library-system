@@ -43,6 +43,12 @@ const ShowList = () => {
         return <div>Loading...</div>
     }
 
+    const handleSelectChange = () => {
+        if(selectRef.current){
+            setSelectedValue(selectRef.current.value);
+        }
+    }
+
     return (
         <Div>
             <h1>Show list</h1>
@@ -50,7 +56,7 @@ const ShowList = () => {
                 <label htmlFor="text-filter">Filter:</label>
                 <input type={selectedValue} name="filter" id="text-filter" />
                 <label htmlFor="select-filter">Filter by:</label>
-                <select ref={selectRef} name="filter-select" id="filter-select">
+                <select ref={selectRef} name="filter-select" id="filter-select" onChange={handleSelectChange}>
                     <option value="text">CPF</option>
                     <option value="datetime-local">Date</option>
                     <option value="number">Publication year</option>
