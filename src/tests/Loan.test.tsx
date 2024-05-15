@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom"
-import { render, screen } from "@testing-library/react"
+import { getByText, render, screen } from "@testing-library/react"
 import Loan from "../components/Loan"
 
 describe("Loan component", () => {
@@ -16,7 +16,17 @@ describe("Loan component", () => {
     }
     test("render loan", () => {
         render(<Loan>{data}</Loan>)
-        const loan = screen.getByText("Eduardo");
-        expect(loan).toBeInTheDocument();
+        expect(screen.getByText('Person:')).toBeInTheDocument();
+        expect(screen.getByText(data.name)).toBeInTheDocument();
+        expect(screen.getByText(data.cpf)).toBeInTheDocument();
+        expect(screen.getByText(data.email)).toBeInTheDocument();
+        expect(screen.getByText(data.phone)).toBeInTheDocument();
+        expect(screen.getByText('Book:')).toBeInTheDocument();
+        expect(screen.getByText(data.title)).toBeInTheDocument();
+        expect(screen.getByText(data.author)).toBeInTheDocument();
+        expect(screen.getByText(data.publisher)).toBeInTheDocument();
+        expect(screen.getByText(data.publicationYear.toString())).toBeInTheDocument();
+        expect(screen.getByText('Loan:')).toBeInTheDocument();
+        expect(screen.getByText(data.loan.toLocaleString())).toBeInTheDocument();
     })
 })
