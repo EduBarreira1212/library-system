@@ -29,4 +29,16 @@ describe("Loan component", () => {
         expect(screen.getByText('Loan:')).toBeInTheDocument();
         expect(screen.getByText(data.loan.toLocaleString())).toBeInTheDocument();
     })
+    test("testing style", () => {
+        render(<Loan>{data}</Loan>)
+        const loan = screen.getByTestId("loan-div");
+        expect(loan).toHaveStyle(`
+        background-color: #f9f9f9;
+        border: 0.1vw solid #ddd;
+        border-radius: 0.8vw;
+        padding: 2vh;
+        margin-bottom: 3vh;
+        box-shadow: 0 0.4vh 0.6vw rgba(0, 0, 0, 0.1);
+      `)
+    })
 })
