@@ -39,6 +39,12 @@ describe("Loan component", () => {
         padding: 2vh;
         margin-bottom: 3vh;
         box-shadow: 0 0.4vh 0.6vw rgba(0, 0, 0, 0.1);
-      `)
+        `)
+        const h3 = loan.querySelectorAll("h3");
+        expect(h3[0]).toHaveStyle(`
+        font-size: 1.8vw;
+        color: #666;
+        margin-bottom: 0.5vw;
+        `)
     })
 })
