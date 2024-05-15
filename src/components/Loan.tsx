@@ -27,7 +27,7 @@ interface IloanProps{
 }
 const Loan: React.FC<IloanProps> = ({children}) => {
     return(
-        <Div>
+        <Div data-testid="loan-div">
             <H3>Person:</H3>
             <P>{children.name}</P>
             <P>{children.cpf}</P>
