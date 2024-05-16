@@ -7,6 +7,10 @@ describe("Register component", () => {
     test("render component", () => {
         render(<BrowserRouter><Register/></BrowserRouter>);
         const h1 = screen.getByText("Register");
+        const label = screen.getByText("Name:");
+        const btn = screen.getByText("loan the book");
         expect(h1).toBeInTheDocument();
+        expect(label).toBeInTheDocument();
+        expect(btn).toBeInTheDocument();
     })
 })
