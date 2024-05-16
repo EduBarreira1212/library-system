@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom"
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import Register from "../routes/Register"
 import { BrowserRouter } from "react-router-dom";
 
@@ -12,5 +12,14 @@ describe("Register component", () => {
         expect(h1).toBeInTheDocument();
         expect(label).toBeInTheDocument();
         expect(btn).toBeInTheDocument();
+    })
+    test("displays error messages for invalid data", async () => {
+        render(<BrowserRouter><Register/></BrowserRouter>);
+        const nameInput = screen.getByPlaceholderText("Ex: Brian");
+        const btn = screen.getByText("loan the book");
+        fireEvent.change(nameInput, {target: {value: ""}});
+        fireEvent.click(btn);
+        const errorMessage = await screen.findByText("Name is required");
+        expect(errorMessage).toBeInTheDocument();
     })
 })
